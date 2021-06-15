@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class Drive : MonoBehaviour {
     // declarando variaveis
-	float speed = 20.0F;
+	float speed = 4.0F;
     float rotationSpeed = 120.0F;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     float health = 100.0f;
     public Slider healthBar;
+    public Rigidbody rb;
 
     private void Start()
     {
@@ -21,12 +22,13 @@ public class Drive : MonoBehaviour {
        
         
 
-        float translation = Input.GetAxis("Vertical") * speed;
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-        translation *= Time.deltaTime;
+        float ver = Input.GetAxis("Vertical") ;
+        float rotation = Input.GetAxis("Horizontal");
+        Vector3 dir = new Vector3(rotation, 0, ver);
+        rb.AddForce(dir * speed );
         rotation *= Time.deltaTime;
-        transform.Translate(0, 0, translation);
-        transform.Rotate(0, rotation, 0);
+        
+        transform.Rotate(0, rotation * rotationSpeed, 0);
        
       
         
