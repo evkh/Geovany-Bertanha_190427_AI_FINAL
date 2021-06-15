@@ -1,5 +1,5 @@
 sceneSetups:
-- path: C:/Users/gijow/Desktop/RobotGuardBTStarter/__MACOSX/RobotGuardBTStarter/Assets/._RobotGuard.unity
+- path: C:/Users/gijow/Desktop/RobotGuardBTStarter/RobotGuardBTStarter/Assets/RobotGuard.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
