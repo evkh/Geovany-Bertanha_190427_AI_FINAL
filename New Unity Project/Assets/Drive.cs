@@ -31,13 +31,17 @@ public class Drive : MonoBehaviour {
 
         float ver = Input.GetAxis("Vertical") ;
         float rotation = Input.GetAxis("Horizontal");
-        Vector3 dir = new Vector3(rotation, 0, ver);
+        Vector3 dir = new Vector3(rotation, 0, ver).normalized;
         rb.AddForce(dir * speed );
 
-        float targetA = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, targetA, 0f);
-      
-        
+        if(dir.magnitude >= 0.1f)
+        {
+            float targetA = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, targetA, 0f);
+
+        }
+
+
         //atira ao apertar Space
         if (Input.GetKeyDown("space"))
         {

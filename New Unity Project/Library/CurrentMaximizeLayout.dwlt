@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 8254
+  controlID: 14041
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 8255
+  controlID: 14042
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 8232
+  controlID: 14043
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -307,9 +307,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 20.066792, y: 106.19398, z: -63.56373}
+    m_Target: {x: 48.8462, y: 8.52651, z: 17.640806}
     speed: 2
-    m_Value: {x: 20.066792, y: 106.19398, z: -63.56373}
+    m_Value: {x: 48.8462, y: 8.52651, z: 17.640806}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -356,13 +356,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.37769452, y: -0.005002933, z: 0.0020392158, w: -0.92591774}
+    m_Target: {x: -0.38186213, y: 0.0019380413, z: -0.00080198754, w: -0.92422044}
     speed: 2
-    m_Value: {x: -0.37769338, y: -0.005002918, z: 0.0020392097, w: -0.925915}
+    m_Value: {x: -0.3818609, y: 0.001938035, z: -0.000801985, w: -0.92421746}
   m_Size:
-    m_Target: 23.464054
+    m_Target: 37.894245
     speed: 2
-    m_Value: 23.464054
+    m_Value: 37.894245
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -521,8 +521,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ca3a0000
-    m_LastClickedInstanceID: 15050
+    m_SelectedInstanceIDs: 408cffff
+    m_LastClickedInstanceID: -29632
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -634,7 +634,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 15050
+  m_LastInspectedObjectInstanceID: -29632
   m_LastVerticalScrollValue: 180
   m_GlobalObjectId: 
   m_LockTracker:

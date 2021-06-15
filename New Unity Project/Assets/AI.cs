@@ -102,6 +102,7 @@ public class AI : MonoBehaviour
 
         return true;
     }
+    //olha para o player
     [Task]
     public void LookAtTarget()
     {
@@ -117,7 +118,7 @@ public class AI : MonoBehaviour
         }
         
     }
-
+    //verifica se o player esta na zona de visão
     [Task]
     bool SeePlayer()
     {
@@ -142,6 +143,14 @@ public class AI : MonoBehaviour
       
 
         
+    }
+    //faz o robo virar
+    [Task]
+    bool Turn(float angle)
+    {
+        var p = this.transform.position + Quaternion.AngleAxis(angle, Vector3.up) * this.transform.forward;
+        target = p;
+        return true;
     }
 }
 

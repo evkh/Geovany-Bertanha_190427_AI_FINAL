@@ -1,5 +1,5 @@
 tree("Root")
-	      sequence
-		           TargetPlayer
-				   LookAtTarget
-				   Fire
+          sequence
+                   TargetPlayer
+                   LookAtTarget
+                   Fire
