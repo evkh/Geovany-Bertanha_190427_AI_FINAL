@@ -102,6 +102,46 @@ public class AI : MonoBehaviour
 
         return true;
     }
+    [Task]
+    public void LookAtTarget()
+    {
+        Vector3 direction = target - this.transform.position;
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotSpeed);
 
+        if (Task.isInspected)
+            Task.current.debugInfo = string.Format("angle={0}", Vector3.Angle(this.transform.forward, direction));
+
+        if (Vector3.Angle(this.transform.forward, direction) < 5.0f)
+        {
+            Task.current.Succeed();
+        }
+        
+    }
+
+    [Task]
+    bool SeePlayer()
+    {
+        Vector3 distance = player.transform.position - this.transform.position;
+        RaycastHit hit;
+        bool seeWall = false;
+        Debug.DrawRay(this.transform.position, distance, Color.red);
+        if(Physics.Raycast(this.transform.position,distance,out hit))
+        {
+            if(hit.collider.gameObject.tag == "wall")
+            {
+                seeWall = true;
+            }
+        }
+        if (Task.isInspected)
+            Task.current.debugInfo = string.Format("wall={0}", seeWall);
+
+        if (distance.magnitude < visibleRange && !seeWall)
+            return true;
+        else
+            return false;
+      
+
+        
+    }
 }
 

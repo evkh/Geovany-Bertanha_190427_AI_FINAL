@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,13 @@ public class Drive : MonoBehaviour {
 	float speed = 4.0F;
     float rotationSpeed = 120.0F;
     public GameObject bulletPrefab;
+    public GameObject player;
     public Transform bulletSpawn;
+
+    public Array spawns;
+
+    public Transform spawn;
+
     float health = 100.0f;
     public Slider healthBar;
     public Rigidbody rb;
@@ -26,10 +33,9 @@ public class Drive : MonoBehaviour {
         float rotation = Input.GetAxis("Horizontal");
         Vector3 dir = new Vector3(rotation, 0, ver);
         rb.AddForce(dir * speed );
-        rotation *= Time.deltaTime;
-        
-        transform.Rotate(0, rotation * rotationSpeed, 0);
-       
+
+        float targetA = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, targetA, 0f);
       
         
         //atira ao apertar Space
@@ -42,11 +48,28 @@ public class Drive : MonoBehaviour {
         Vector3 healthBarPos = Camera.main.WorldToScreenPoint(this.transform.position);
         healthBar.value = (int)health;
         healthBar.transform.position = healthBarPos + new Vector3(0, 30, 0);
+
+        if (health <= 0)
+        {
+            OnDeath();
+        }
     }
 
     void UpdateHealth()
     {
         if (health < 100)
             health++;
+    }
+
+    public void OnDeath()
+    {
+       
+        
+            Destroy(this.gameObject);
+
+            GameObject playerA = GameObject.Instantiate(player, spawn.transform.position, spawn.transform.rotation);
+            UpdateHealth();
+
+        
     }
 }
